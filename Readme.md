@@ -45,14 +45,14 @@ requirements.txt
    git clone https://github.com/Deepika14145/QuickFactChecker.git
    cd QuickFactChecker
    ```
-3. Create virtual environment (optional but recommended)
+2. Create virtual environment (optional but recommended)
    ```bash
       python -m venv venv
       source venv/bin/activate   # for Linux/Mac
       venv\Scripts\activate      # for Windows
    ```
 
-2. Install the required dependencies:
+3. Install the required dependencies:
    ```bash
    pip install -r requirements.txt
    ```
@@ -85,13 +85,17 @@ jupyter notebook liar-data-analysis.ipynb
  ```
 ## 🤝 Contributing
 
-We welcome contributions! 🎉
+Contributions are welcome! Follow these steps:
 
-- Fork the repo
-- Create a new branch (git checkout -b feature-name)
-- Commit your changes
-- Push and open a Pull Request
-  
+1. Fork the repository
+2. Create a new branch (git checkout -b feature-name)
+3. Make your changes
+4. Commit your changes (git commit -m 'Add feature')
+5. Push to the branch  (git push origin feature-name)
+6. Create a Pull Request
+
+Please read [CONTRIBUTING.md](CONTRIBUTING.md) and follow our [Code of Conduct](CODE_OF_CONDUCT.md).
+
 ## 📧 Contact  
 
 For queries, feedback, or guidance regarding this project, you can contact the **mentor** assigned to the issue:  
@@ -104,7 +108,10 @@ Original Repository: [QuickFactChecker](https://github.com/Deepika14145/QuickFac
 
 
 ## 📄 **License**
-
 This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
 
----
+--- 
+
+If you like this project, please give it a ⭐ star. Your support means a lot to us!
+
+Feel free to contribute or suggest new features!🙏
