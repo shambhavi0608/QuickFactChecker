@@ -21,14 +21,14 @@ def predict():
     try:
         # Get JSON data
         data = request.get_json(force=True)
-        if 'text' not in data:
-            return jsonify({'error': 'Missing or incorrect key "text" in JSON data'})
+        if not data or 'text' not in data:
+            return jsonify({'error': 'Missing or incorrect key "text" in JSON data'}), 400
 
         text = data['text']
 
-        # ✅ Beginner-friendly fix: handle empty input
-        if not text.strip():
-            return jsonify({'error': '⚠️ Please enter some text before submitting.'})
+        # Handle empty or invalid input
+        if not isinstance(text, str) or not text.strip():
+            return jsonify({'error': '⚠️ Please enter some text before submitting.'}), 400
 
         # ------------------------------
         # Uncomment this once model is available
@@ -41,7 +41,8 @@ def predict():
         return jsonify({'message': 'Text received successfully!'})
 
     except Exception as e:
-        return jsonify({'error': str(e)})
+        print(f"Error in /predict: {e}")  # Log the error for debugging
+        return jsonify({'error': 'Internal server error.'}), 500
 
 if __name__ == '__main__':
     import os
