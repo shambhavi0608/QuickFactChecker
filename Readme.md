@@ -1,6 +1,9 @@
 # 📰 QuickFactChecker – Fake News Detection
 
-## 📌 Project Overview
+## � Live Demo
+**Try it now:** [https://quickfactchecker.onrender.com/](https://quickfactchecker.onrender.com/)
+
+## �📌 Project Overview
 QuickFactChecker is a **machine learning–based web app** that helps detect whether a news article is **real** or **fake**.
 It uses different models (e.g., Naive Bayes, LSTM) trained on the **LIAR dataset** to evaluate credibility and assist users in identifying potentially misleading information.
 
@@ -131,7 +134,24 @@ Contributions are welcome! Follow these steps:
 
 Please read [CONTRIBUTING.md](CONTRIBUTING.md) and follow our [Code of Conduct](CODE_OF_CONDUCT.md).
 
-## 📧 Contact  
+## � Deployment
+
+The application is deployed on **Render** and accessible at: [https://quickfactchecker.onrender.com/](https://quickfactchecker.onrender.com/)
+
+### Deployment Features:
+- ✅ **Free hosting** on Render
+- ✅ **Auto-deployment** from GitHub commits
+- ✅ **Production-ready** with Gunicorn server
+- ✅ **HTTPS enabled** by default
+- ✅ **Optimized requirements** for faster build times
+
+### Technical Stack:
+- **Backend**: Flask (Python)
+- **Server**: Gunicorn
+- **Platform**: Render
+- **CI/CD**: GitHub integration
+
+## �📧 Contact  
 
 For queries, feedback, or guidance regarding this project, you can contact the **mentor** assigned to the issue:  
 
