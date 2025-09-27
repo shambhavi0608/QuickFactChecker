@@ -2,7 +2,9 @@ from flask import Flask, request, jsonify, render_template
 from flask_cors import CORS
 # import joblib  # Uncomment if you have the model file
 
-app = Flask(__name__)
+# Serve files from the Public folder
+# static_url_path='' means static files are served from root ('/style.css', '/script.js')
+app = Flask(__name__, static_folder='Public', template_folder='Public', static_url_path='')
 CORS(app)  # Enable CORS for all domains
 
 # ------------------------------
