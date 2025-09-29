@@ -23,11 +23,12 @@
   <link rel="stylesheet" href="style.css">
   <title>Enhanced Quick Fact Checker with Modern UI/UX</title>
 
-  <!-- Chart.js CDN -->
+  <!-- Chart.js -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
   <div class="container">
+    <!-- Header -->
     <div class="header">
       {% with messages = get_flashed_messages() %}
       {% if messages %}
@@ -153,9 +154,9 @@
       <div class="dashboard-filters">
         <label for="model-select">Choose Models:</label>
         <select id="model-select" multiple>
-          <option value="logreg">Logistic Regression</option>
-          <option value="rf">Random Forest</option>
-          <option value="lstm">LSTM</option>
+          <option value="Logistic Regression">Logistic Regression</option>
+          <option value="Random Forest">Random Forest</option>
+          <option value="LSTM">LSTM</option>
         </select>
 
         <label for="dataset-select">Dataset:</label>
@@ -174,9 +175,8 @@
         </select>
       </div>
 
-      <div class="charts">
-        <canvas id="confusion-matrix-chart"></canvas>
-        <canvas id="roc-curve-chart"></canvas>
+      <div class="chart-box">
+        <canvas id="dashboard-chart" height="300"></canvas>
       </div>
 
       <div class="summary-box" id="summary-box">
