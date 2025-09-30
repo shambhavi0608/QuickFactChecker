@@ -635,3 +635,6 @@ button:focus,
         scroll-behavior: auto !important;
     }
 }
+.prediction-result.success { background: var(--success-bg-light); color: var(--success); }
+.prediction-result.error   { background: var(--error-bg-light); color: var(--error); }
+.prediction-result.warning { background: var(--warning-bg-light); color: var(--warning); }

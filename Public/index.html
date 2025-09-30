@@ -23,18 +23,11 @@
 <body>
     <div class="container">
         <div class="header">
-            <!-- {% with messages = get_flashed_messages() %}
-  {% if messages %}
-    <ul style="color: red; font-weight: bold;">
-      {% for message in messages %}
-        <li>{{ message }}</li>
-      {% endfor %}
-    </ul>
-  {% endif %}
-{% endwith %} -->
-
             <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="theme-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                     viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                     stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                     class="theme-icon">
                     <circle cx="12" cy="12" r="4"/>
                     <path d="M12 2v2"/>
                     <path d="M12 20v2"/>
@@ -47,7 +40,9 @@
                 </svg>
             </button>
             <div class="logo-container">
-                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40"
+                     viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                     stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
                     <polyline points="14,2 14,8 20,8"/>
                     <line x1="16" y1="13" x2="8" y2="13"/>
@@ -86,7 +81,9 @@
                 </div>
                 <button type="submit" id="submit-btn" class="btn-primary" aria-label="Analyze text">
                     <span class="btn-content">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                             viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                             stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <circle cx="11" cy="11" r="8"/>
                             <path d="m21 21-4.35-4.35"/>
                         </svg>
@@ -97,10 +94,10 @@
             </form>
             <div id="prediction-result" class="prediction-result" role="status" aria-live="polite" aria-atomic="true">
                 <div class="result-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="result-icon-svg">
-                        <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/>
-                        <path d="m9 12 2 2 4-4"/>
-                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                         viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                         stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                         class="result-icon-svg"></svg>
                 </div>
                 <div class="result-content">
                     <div class="result-title" id="result-title">Analysis Result</div>
@@ -110,45 +107,22 @@
                     </div>
                     <div id="confidence-text" style="display: none;"></div>
                     <div class="result-actions">
-                        <button class="action-btn" id="copy-btn" aria-label="Copy result">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <rect width="14" height="14" x="8" y="8" rx="2" ry="2"/>
-                                <path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/>
-                            </svg>
-                            Copy Result
-                        </button>
-                        <button class="action-btn" id="share-btn" aria-label="Share result">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/>
-                                <polyline points="16,6 12,2 8,6"/>
-                                <line x1="12" y1="2" x2="12" y2="15"/>
-                            </svg>
-                            Share
-                        </button>
+                        <button class="action-btn" id="copy-btn" aria-label="Copy result">Copy</button>
+                        <button class="action-btn" id="share-btn" aria-label="Share result">Share</button>
                     </div>
-                    <button class="retry-btn" id="retry-btn" style="display: none;" aria-label="Retry analysis">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M21 2v6h-6"/>
-                            <path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/>
-                            <path d="M3 22v-6h6"/>
-                            <path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/>
-                        </svg>
-                        Retry
-                    </button>
+                    <button class="retry-btn" id="retry-btn" style="display: none;" aria-label="Retry analysis">Retry</button>
                 </div>
             </div>
         </div>
         <div class="history-card" id="history-card" style="display: none;">
             <div class="history-header" id="history-header" role="button" aria-expanded="false" tabindex="0">
                 <div class="history-title">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/>
-                        <path d="M3 3v5h5"/>
-                        <path d="M12 7v5l4 2"/>
-                    </svg>
                     Recent Checks (<span id="history-count">0</span>)
                 </div>
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="history-toggle" id="history-toggle">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                     viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                     stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                     class="history-toggle" id="history-toggle">
                     <polyline points="6,9 12,15 18,9"/>
                 </svg>
             </div>
@@ -156,7 +130,6 @@
         </div>
     </div>
     <div class="toast" id="toast" role="alert" aria-live="assertive" aria-atomic="true"></div>
-    <!-- Confetti Canvas (hidden by default) -->
     <canvas id="confetti-canvas" style="position: fixed; pointer-events: none; top: 0; left: 0; width: 100%; height: 100%; z-index: 9999; display: none;"></canvas>
     <script src="script.js"></script>
 </body>
