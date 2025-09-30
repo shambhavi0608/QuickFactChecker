@@ -9,8 +9,8 @@ CORS(app)  # Enable CORS for all domains
 
 # ------------------------------
 # Load the model
-# Comment out if model_pipeline.pkl is missing
-# model_path = 'model\\model_pipeline.pkl'
+# Uncomment if model_pipeline.pkl is available
+# model_path = 'model/model_pipeline.pkl'
 # model = joblib.load(model_path)
 # ------------------------------
 
@@ -45,6 +45,11 @@ def predict():
     except Exception as e:
         print(f"Error in /predict: {e}")  # Log the error for debugging
         return jsonify({'error': 'Internal server error.'}), 500
+
+# ✅ Health check route
+@app.route('/health')
+def health():
+    return jsonify({'status': 'ok'}), 200
 
 if __name__ == '__main__':
     import os
