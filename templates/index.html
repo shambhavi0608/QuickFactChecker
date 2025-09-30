@@ -20,26 +20,31 @@
   <link rel="manifest" href="/manifest.json">
   <meta name="theme-color" content="#4f46e5">
 
-  <link rel="stylesheet" href="style.css">
+  <!-- ✅ Flask static CSS -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
   <title>Enhanced Quick Fact Checker with Modern UI/UX</title>
 
   <!-- Chart.js -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            {% with messages = get_flashed_messages() %}
-  {% if messages %}
-    <ul style="color: red; font-weight: bold;">
-      {% for message in messages %}
-        <li>{{ message }}</li>
-      {% endfor %}
-    </ul>
-  {% endif %}
-{% endwith %}
+  <div class="container">
+    <div class="header">
+      <!-- Flash messages -->
+      {% with messages = get_flashed_messages() %}
+        {% if messages %}
+          <ul style="color: red; font-weight: bold;">
+            {% for message in messages %}
+              <li>{{ message }}</li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+      {% endwith %}
 
+      <!-- Theme toggle -->
       <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+        <!-- svg icon -->
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" 
           viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" 
           stroke-linecap="round" stroke-linejoin="round" class="theme-icon">
@@ -56,6 +61,7 @@
       </button>
 
       <div class="logo-container">
+        <!-- Logo SVG -->
         <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" 
           viewBox="0 0 24 24" fill="none" stroke="currentColor" 
           stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -70,9 +76,9 @@
       <p class="subtitle">Verify the authenticity of news articles and claims with AI-powered analysis</p>
     </div>
 
-    <!-- Main Fact Checker Card -->
+    <!-- 🔍 Main Fact Checker Card -->
     <div class="main-card">
-      <form id="prediction-form" novalidate>
+      <form id="prediction-form" method="POST" action="/" novalidate>
         <div class="form-group">
           <label for="text-input">Enter text to analyze</label>
           <div class="textarea-container">
@@ -86,6 +92,7 @@
           </div>
         </div>
 
+        <!-- Sample Inputs -->
         <div class="sample-inputs">
           <p>Try these examples:</p>
           <div class="sample-buttons">
@@ -96,28 +103,14 @@
         </div>
 
         <button type="submit" id="submit-btn" class="btn-primary" aria-label="Analyze text">
-          <span class="btn-content">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" 
-              viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" 
-              stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="11" cy="11" r="8"/>
-              <path d="m21 21-4.35-4.35"/>
-            </svg> Analyze Text
-          </span>
+          <span class="btn-content">🔍 Analyze Text</span>
           <span class="loading-spinner" aria-hidden="true"></span>
         </button>
       </form>
 
       <!-- Prediction Result -->
       <div id="prediction-result" class="prediction-result" role="status" aria-live="polite" aria-atomic="true">
-        <div class="result-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" 
-            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" 
-            stroke-linecap="round" stroke-linejoin="round" class="result-icon-svg">
-            <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/>
-            <path d="m9 12 2 2 4-4"/>
-          </svg>
-        </div>
+        <div class="result-icon">✔️</div>
         <div class="result-content">
           <div class="result-title" id="result-title">Analysis Result</div>
           <div id="result-message">Processing your text...</div>
@@ -147,7 +140,7 @@
       </div>
     </div>
 
-    <!-- 🆕 Model Performance Dashboard -->
+    <!-- 📊 Model Performance Dashboard -->
     <div class="dashboard-card">
       <h2>Model Performance Dashboard</h2>
       <div class="dashboard-filters">
@@ -189,7 +182,7 @@
   <div class="toast" id="toast" role="alert" aria-live="assertive" aria-atomic="true"></div>
   <canvas id="confetti-canvas" style="position: fixed; pointer-events: none; top: 0; left: 0; width: 100%; height: 100%; z-index: 9999; display: none;"></canvas>
 
-  <!-- Scripts -->
-  <script src="script.js"></script>
+  <!-- ✅ Flask static JS -->
+  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </body>
 </html>
