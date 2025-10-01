@@ -8,8 +8,11 @@ app = Flask(__name__, static_folder='Public', template_folder='Public', static_u
 CORS(app)  # Enable CORS for all domains
 
 # ------------------------------
+
 # Load the model (commented if not available)
 # import joblib
+# Load the model
+# Uncomment if model_pipeline.pkl is available
 # model_path = 'model/model_pipeline.pkl'
 # model = joblib.load(model_path)
 # ------------------------------
@@ -80,6 +83,11 @@ def dashboard_data():
         return jsonify({'error': 'Error parsing model_comparison.md'}), 500
 
     return jsonify(data)
+# ✅ Health check route
+@app.route('/health')
+def health():
+    return jsonify({'status': 'ok'}), 200
+
 
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 5000))
