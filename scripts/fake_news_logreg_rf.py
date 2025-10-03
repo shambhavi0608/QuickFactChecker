@@ -134,6 +134,7 @@ except Exception as e:
 # -------------------------
 # Plot comparison
 # -------------------------
+# new changes
 try:
     models_list = list(results.keys())
     accuracies = [results[m]["accuracy"] for m in models_list]
