@@ -238,6 +238,7 @@ body.dark .sample-inputs p { color: var(--text-secondary-dark); }
 .sample-buttons {
     display: flex;
     flex-wrap: wrap;
+    width: 100%;
     gap: 0.5rem;
 }
 .sample-btn {
@@ -246,7 +247,7 @@ body.dark .sample-inputs p { color: var(--text-secondary-dark); }
     border: 1px solid rgba(79, 70, 229, 0.2);
     padding: 0.5rem 1rem;
     border-radius: 2rem;
-    font-size: 0.75rem;
+    font-size: 1rem;
     cursor: pointer;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     transform: scale(1);
@@ -427,6 +428,7 @@ body.dark .prediction-result.warning {
     border-radius: 1.5rem;
     box-shadow: var(--shadow-light);
     padding: 2rem;
+    margin-top: 0.75rem;
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.2);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
