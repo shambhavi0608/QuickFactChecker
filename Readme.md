@@ -1,42 +1,47 @@
 # 📰 QuickFactChecker – Fake News Detection
 
-## 📌 Project Overview
-QuickFactChecker is a machine learning–based web app that helps detect whether a news article is **real** or **fake**.  
-It uses different models (e.g., Naive Bayes, LSTM) trained on the **LIAR dataset** to evaluate credibility and assist users in identifying potentially misleading information.  
+## � Live Demo
+**Try it now:** [https://quickfactchecker.onrender.com/](https://quickfactchecker.onrender.com/)
+
+## �📌 Project Overview
+QuickFactChecker is a **machine learning–based web app** that helps detect whether a news article is **real** or **fake**.
+It uses different models (e.g., Naive Bayes, LSTM) trained on the **LIAR dataset** to evaluate credibility and assist users in identifying potentially misleading information.
 
 ---
 
 ## ✨ Features
-- ✅ Fake news classification using ML models (Naive Bayes, LSTM).  
-- ✅ Interactive web app built with **Flask** and **HTML templates**.  
-- ✅ Preprocessed dataset included (`train.tsv`, `test.tsv`, `valid.tsv`).  
-- ✅ Notebooks for **data analysis & experimentation** (`liar-data-analysis.ipynb`, `dataset.ipynb`).  
-- ✅ Easy setup with `requirements.txt`.  
+- ✅ Fake news classification using ML models (**Naive Bayes**, **Logistic Regression**, **Random Forest**, and **LSTM**).
+- ✅ Interactive web app built with **Flask** and **HTML templates**.
+- ✅ **Automated NLTK Setup** to prevent missing resource errors.
+- ✅ Preprocessed dataset included (`train.tsv`, `test.tsv`, `valid.tsv`).
+- ✅ Notebooks for **data analysis & experimentation** (`liar-data-analysis.ipynb`, `dataset.ipynb`).
+- ✅ Easy setup with `requirements.txt`.
 
 ---
 
 ## 📂 Project Structure
 ```bash
 dataset/liar
-   ├── README.md   ##Dataset description
-   ├── train.tsv   ##Training data
-   ├── test.tsv    ##Testing data
-   ├── valid.tsv   ##Validation data
+   ├── README.md   ##Dataset description
+   ├── train.tsv   ##Training data
+   ├── test.tsv    ##Testing data
+   ├── valid.tsv   ##Validation data
 
 module/
-   ├── dataset.ipynb
-   ├── fake-news-detection-using-lstm.ipynb
-   ├── fake-news-detection-using-nb.ipynb
-   ├── liar-data-analysis.ipynb
+   ├── dataset.ipynb
+   ├── fake-news-detection-using-lstm.ipynb
+   ├── fake-news-detection-using-nb.ipynb
+   ├── liar-data-analysis.ipynb
 
 templates/
-   ├── index.html
+   ├── index.html
 
 scripts/
-   └── fake_news_logreg_rf.py     ## Train & evaluate Naive Bayes, Logistic Regression, Random Forest
+   ├── setup_nltk.py          
+   └── fake_news_logreg_rf.py     ## Train & evaluate Naive Bayes, Logistic Regression, Random Forest
 results/
-   ├── model_comparison.md        ## Generated baseline comparison table (markdown)
-   └── comparison.png             ## Generated accuracy bar chart
+   ├── model_comparison.md        ## Generated baseline comparison table (markdown)
+   └── comparison.png             ## Generated accuracy bar chart
 
 .gitattributes
 app.py
@@ -66,6 +71,11 @@ requirements.txt
    ```bash
    pip install -r requirements.txt
    ```
+
+5. Download NLTK Corpora:
+```bash
+python scripts/setup_nltk.py
+```
 
 ## 📊 Baseline Model Comparison
 
@@ -124,7 +134,24 @@ Contributions are welcome! Follow these steps:
 
 Please read [CONTRIBUTING.md](CONTRIBUTING.md) and follow our [Code of Conduct](CODE_OF_CONDUCT.md).
 
-## 📧 Contact  
+## � Deployment
+
+The application is deployed on **Render** and accessible at: [https://quickfactchecker.onrender.com/](https://quickfactchecker.onrender.com/)
+
+### Deployment Features:
+- ✅ **Free hosting** on Render
+- ✅ **Auto-deployment** from GitHub commits
+- ✅ **Production-ready** with Gunicorn server
+- ✅ **HTTPS enabled** by default
+- ✅ **Optimized requirements** for faster build times
+
+### Technical Stack:
+- **Backend**: Flask (Python)
+- **Server**: Gunicorn
+- **Platform**: Render
+- **CI/CD**: GitHub integration
+
+## �📧 Contact  
 
 For queries, feedback, or guidance regarding this project, you can contact the **mentor** assigned to the issue:  
 
